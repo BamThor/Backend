@@ -1,4 +1,57 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: utf-8
 
 spring:
-  profiles:
-    active: local
+  datasource:
+#    url: jdbc:mysql://localhost:3306/sojuthon
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: password
+
+    url: jdbc:h2:~/sojuthon
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  redis:
+    host: localhost
+    port: 6379
+  h2:
+    console:
+      enabled: true
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  output:
+    ansi:
+      enabled: always
+
+logging:
+  level:
+    '[org.springframework.web]': DEBUG
+    '[org.hibernate]': DEBUG
+    com:
+      amazonaws:
+        util:
+          EC2MetadataUtils: error
+cloud:
+  aws:
+    s3:
+      bucket: sojuthon
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+    credentials:
+      instanceProfile: true

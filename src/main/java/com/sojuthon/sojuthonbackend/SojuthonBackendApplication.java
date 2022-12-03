@@ -7,7 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 @SpringBootApplication
 public class SojuthonBackendApplication {
 	public static final String APPLICATION_LOCATIONS = "spring.config.location="
-			+ "classpath:application-dev.yml,"
+			+ "classpath:application.yml,"
 			+ "classpath:aws.yml";
 
 
