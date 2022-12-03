@@ -29,7 +29,14 @@ spring:
     ansi:
       enabled: always
 
+
 logging:
   level:
     '[org.springframework.web]': DEBUG
     '[org.hibernate]': DEBUG
+cloud:
+  aws:
+    s3:
+      bucket: sojuthon
+    region:
+      static: ap-northeast-2

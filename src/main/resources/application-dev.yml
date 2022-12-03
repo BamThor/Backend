@@ -7,10 +7,15 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/sojuthon
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: password
+#    url: jdbc:mysql://localhost:3306/sojuthon
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: password
+
+    url: jdbc:h2:~/sojuthon
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
 
   h2:
     console:
